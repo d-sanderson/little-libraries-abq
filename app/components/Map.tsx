@@ -8,13 +8,18 @@ const Map = ({ libraries, footNote }) => {
     <span
       data-id={lib.id}
       data-geometry-type="Point"
-      data-geometry={`[${lib.latitude},${lib.longitude}]`}
-      data-popup={`<span class='city-popup'>${lib.name}</span>`}
+      data-geometry={`[${lib.longitude},${lib.latitude}]`}
+      data-popup={`
+      <span class='city-popup'>
+        <h1>${lib.name}<h1>
+        <p>${lib.description}<p>
+      </span>
+      `}
     ></span>)
   return (
     <div>
       <div
-      style={{ height: '600px', width: '80%', margin: '0 auto', zIndex: '-1'}}
+      style={{ height: '600px', width: '80%', margin: '0 auto'}}
         id="map"
         data-center="[-106.629181, 35.106766]"
         data-zoom="11"

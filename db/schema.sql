@@ -29,15 +29,3 @@ CREATE TABLE LibraryComments (
     FOREIGN KEY (library_id) REFERENCES LittleLibraries(id),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
-
--- Insert dummy data into the LittleLibraries table
-INSERT INTO LittleLibraries (name, description, latitude, longitude, approved_status) VALUES
-    ('Library A', 'A small library with a variety of books.', 40.7128, -74.0060, 0),
-    ('Library B', 'Located in a park, specializes in children''s books.', 34.0522, -118.2437, 0),
-    ('Library C', 'Community library with a wide selection of genres.', 51.5074, -0.1278, 1);
-
--- Insert dummy data into the Users table with passwords
-INSERT INTO Users (email, password) VALUES
-    ('user1@example.com', 'password1'),
-    ('user2@example.com', 'password2'),
-    ('user3@example.com', 'password3');

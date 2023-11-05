@@ -15,3 +15,5 @@ export const GET_COMMENTS_AND_USER_EMAIL = `
   JOIN Users ON LibraryComments.user_id = Users.user_id
   WHERE LibraryComments.library_id = ?
 `
+
+export const GET_VERIFIED_LIBRARIES = "SELECT * FROM LittleLibraries WHERE approved_status = 1"
