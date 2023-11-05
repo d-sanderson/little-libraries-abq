@@ -1,7 +1,6 @@
 /** @jsx jsx */
 /** @jsxFrag  Fragment */
 import { jsx } from "hono/jsx";
-import FormErrorText from './FormErrorText'
 
 export const NewComment = ({ libraryId }) => (
   // We use hx-boost because we want the whole page to update
@@ -22,13 +21,13 @@ export const NewComment = ({ libraryId }) => (
       <input
         name="library_id"
         value={libraryId}
-        type="text"
+        type="hidden"
       />
       <input
         name="user_id"
         // todo dynamically add user_id
         value="1"
-        type="text"
+        type="hidden"
       />
       <button class="btn" type="submit">
        Add a comment
