@@ -17,3 +17,5 @@ export const GET_COMMENTS_AND_USER_EMAIL = `
 `
 
 export const GET_VERIFIED_LIBRARIES = "SELECT * FROM LittleLibraries WHERE approved_status = 1"
+
+export const GET_LIBRARY_BY_ID = "SELECT * FROM LittleLibraries WHERE id = ?";

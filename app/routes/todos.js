@@ -129,7 +129,7 @@ export const CreateLibrary = async ({ context }) => {
       )
         .bind(parsed.data.name, libraryId)
         .first();
-    context.header("HX-Location", `/libraries/${libraryId}/view`);
+    context.header("HX-Location", `/libraries/${libraryId}`);
     return <NewLibraryForm libraryId={libraryId} />;
   } else {
     console.log("errors", parsed.error.flatten().fieldErrors);
@@ -216,8 +216,8 @@ export const DeleteTodo = async ({ context }) => {
     .run();
   // Two ways to redirect:
   // 1. Set HX-Redirect and htmx will redirect to that URL and replace the body with the response
-  // context.header('HX-Redirect', `/libraries/${libraryId}/view`)
+  // context.header('HX-Redirect', `/libraries/${libraryId}`)
   // 2. Set HX-Push which updates the browser URL, and then return NewTodo which we want to show after deleting a todo, which is rendered and replaces the body
-  context.header("HX-Push", `/libraries/${libraryId}/view`);
+  context.header("HX-Push", `/libraries/${libraryId}`);
   return <div></div>;
 };

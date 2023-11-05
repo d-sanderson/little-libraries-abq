@@ -61,7 +61,7 @@ const MainLayout = async (props) => {
                     ? "bg-gray-100 border-gray-200/60"
                     : "border-transparent"
                 }`}
-                to={`/libraries/${lib.id}/view`}
+                to={`/libraries/${lib.id}`}
               >
                 {lib.name}
               </Link>
