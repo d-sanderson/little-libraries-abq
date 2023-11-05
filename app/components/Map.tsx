@@ -5,14 +5,14 @@ import { jsx } from "hono/jsx";
 const Map = ({ libraries, footNote }) => {
   const points = libraries.map(lib =>
     <div
-      hx-get="/library"
+      hx-post="/library"
       hx-trigger="click"
       hx-target="#activeLibrary"
       data-id={lib.id}
       data-geometry-type="Point"
       data-geometry={`[${lib.longitude},${lib.latitude}]`}
       data-popup={`
-      <span class='city-popup'>
+      <span class='city-popup' >
         <h1>${lib.name}<h1>
         <p>${lib.description}<p>
       </span>

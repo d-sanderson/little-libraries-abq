@@ -2,6 +2,7 @@
 /** @jsxFrag  Fragment */
 import { jsx } from "hono/jsx";
 import { Hono } from "hono";
+import { basicAuth } from "hono/basic-auth";
 import { rootLayout, layout, view } from "../htmljs";
 import AppLayout from "./layouts/AppLayout";
 import MainLayout from "./layouts/MainLayout";
@@ -14,6 +15,13 @@ import { CreateComment } from "./components/CreateComment";
 
 const app = new Hono();
 
+app.use(
+  "/admin/*",
+  basicAuth({
+    username: "hono",
+    password: "testing123",
+  })
+);
 app.use("*", rootLayout(AppLayout));
 app.use("*", layout(MainLayout));
 app.get("/admin", view(AdminLayout));
