@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "wrangler dev --local --assets ./public --log-level",
     "dev:css": "tailwindcss -i ./app/app.css -o ./public/app.css --watch",
-    "deploy": "tailwindcss -i ./app/app.css -o ./public/app.css --minify && wrangler deploy --assets ./public"
+    "deploy": "wrangler deploy --assets ./public",
+    "deploy_original": "tailwindcss -i ./app/app.css -o ./public/app.css --minify && wrangler deploy --assets ./public"
   },
   "dependencies": {
     "hono": "^3.3.1",

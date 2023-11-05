@@ -12,10 +12,9 @@ const Map = ({ libraries, footNote }) => {
       data-popup={`<span class='city-popup'>${lib.name}</span>`}
     ></span>)
   return (
-    <div
-      class="w-full h-1/2"
-    >
+    <div>
       <div
+      style={{ height: '600px', width: '80%', margin: '0 auto', zIndex: '-1'}}
         id="map"
         data-center="[-106.629181, 35.106766]"
         data-zoom="11"
