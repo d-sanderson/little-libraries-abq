@@ -15,7 +15,6 @@ CREATE TABLE LittleLibraries (
 -- Create the Users table with an auto-incrementing primary key
 CREATE TABLE Users (
     user_id INTEGER PRIMARY KEY,
-    username TEXT NOT NULL,
     email TEXT NOT NULL,
     password TEXT NOT NULL
 );
@@ -37,10 +36,10 @@ INSERT INTO LittleLibraries (name, description, latitude, longitude) VALUES
     ('Library C', 'Community library with a wide selection of genres.', 51.5074, -0.1278);
 
 -- Insert dummy data into the Users table with passwords
-INSERT INTO Users (username, email, password) VALUES
-    ('user1', 'user1@example.com', 'password1'),
-    ('user2', 'user2@example.com', 'password2'),
-    ('user3', 'user3@example.com', 'password3');
+INSERT INTO Users (email, password) VALUES
+    ('user1@example.com', 'password1'),
+    ('user2@example.com', 'password2'),
+    ('user3@example.com', 'password3');
 
 -- Insert dummy data into the LibraryComments table
 INSERT INTO LibraryComments (library_id, user_id, comment_text) VALUES

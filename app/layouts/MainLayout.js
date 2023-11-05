@@ -23,19 +23,19 @@ const MainLayout = async (props) => {
               </span>
             </a>
             <nav class="items-center hidden space-x-5 text-sm font-medium lg:flex">
-              {/* <a class="relative transition-colors text-neutral-700 hover:text-black group" href="/">
-                <span>libraries</span>
+              <a class="relative transition-colors text-neutral-700 hover:text-black group" href="/">
+                <span> view all libraries</span>
                 <span class="absolute bottom-0 w-0 h-0.5 duration-300 ease-out bg-black group-hover:w-full left-1/2 group-hover:left-0 group-hover:-translate-x-0"></span>
-              </a> */}
+              </a>
             </nav>
           </div>
           <div class="relative space-x-1 font-medium leading-10 sm:space-x-2 md:flex-grow-0 md:flex-shrink-0 md:text-right lg:flex-grow-0 lg:flex-shrink-0">
-            <button class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 text-neutral-900 hover:text-neutral-800 hover:bg-neutral-100">
+            <Link to="/login" class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 text-neutral-900 hover:text-neutral-800 hover:bg-neutral-100">
               Login
-            </button>
-            <button class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 bg-neutral-900 hover:bg-neutral-800 hover:text-white text-gray-100">
+            </Link>
+            <Link to="/signup" class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 bg-neutral-900 hover:bg-neutral-800 hover:text-white text-gray-100">
               Signup
-            </button>
+            </Link>
           </div>
         </div>
       </header>
@@ -46,18 +46,6 @@ const MainLayout = async (props) => {
             Little Libraries
           </h2>
           <div class="relative grid grid-flow-row text-sm mb-7 auto-rows-max">
-            <Link
-              class="group flex w-full items-center rounded-md border px-2 py-1.5"
-              to="/"
-            >
-              View all
-            </Link>
-            <Link
-              class="group flex w-full items-center rounded-md border px-2 py-1.5"
-              to="/admin/library/new"
-            >
-              Add
-            </Link>
             {libraries.map((lib) => (
               <Link
                 class={`group flex w-full items-center rounded-md border px-2 py-1.5 ${
@@ -70,6 +58,13 @@ const MainLayout = async (props) => {
                 {lib.name}
               </Link>
             ))}
+            <Link
+              class="group flex w-full items-center rounded-md border px-2 py-1.5"
+              to="/admin/"
+            >
+              Admin
+            </Link>
+            infinite scroll here?
           </div>
         </aside>
         <div
