@@ -1,19 +1,12 @@
 /** @jsx jsx */
 /** @jsxFrag  Fragment */
 import { jsx } from "hono/jsx";
+import { GET_ALL_USERS, GET_COMMENTS, GET_PENDING_COMMENTS } from "../queries";
 
 const AdminLayout = async ({ context }) => {
-  const { results: users } = await context.env.DB.prepare(
-    "SELECT * FROM Users"
-  ).all()
-
-  const { results: pendingEntries } = await context.env.DB.prepare(
-    "SELECT * FROM LittleLibraries WHERE approved_status = 0"
-  ).all()
-  
-  const { results: comments } = await context.env.DB.prepare(
-    "SELECT * FROM LibraryComments"
-  ).all()
+  const { results: users } = await context.env.DB.prepare(GET_ALL_USERS).all()
+  const { results: pendingEntries } = await context.env.DB.prepare(GET_PENDING_COMMENTS).all()
+  const { results: comments } = await context.env.DB.prepare(GET_COMMENTS).all()
 
   return (
     <div>

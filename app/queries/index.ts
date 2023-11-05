@@ -1,3 +1,14 @@
+
+
+export const GET_COMMENTS = "SELECT * FROM LibraryComments"
+
+
+export const GET_ALL_USERS = "SELECT * FROM Users";
+
+export const GET_LIBRARIES = "SELECT * FROM LittleLibraries";
+
+export const GET_PENDING_COMMENTS = "SELECT * FROM LittleLibraries WHERE approved_status = 0";
+
 export const GET_COMMENTS_AND_USER_EMAIL = `
   SELECT LibraryComments.*, Users.email
   FROM LibraryComments

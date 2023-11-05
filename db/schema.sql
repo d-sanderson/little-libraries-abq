@@ -41,10 +41,3 @@ INSERT INTO Users (email, password) VALUES
     ('user1@example.com', 'password1'),
     ('user2@example.com', 'password2'),
     ('user3@example.com', 'password3');
-
--- Insert dummy data into the LibraryComments table
--- INSERT INTO LibraryComments (library_id, user_id, comment_text) VALUES
---     (1, 1, 'I love this library! It has a great selection of books.'),
---     (2, 2, 'I often bring my kids here. They enjoy it a lot.'),
---     (3, 3, 'This library is a fantastic resource for our community.');
-

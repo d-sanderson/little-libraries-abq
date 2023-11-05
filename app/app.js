@@ -23,7 +23,7 @@ app.use("/libraries/:libraryId/*", layout(LibraryLayout)); // Example of a neste
 app.get("/", view(LibraryListLayout));
 app.get(
   "/libraries/:libraryId/view",
-  view(() => <div>side panel add comments add report/request edit</div>)
+  view(() => <div>request edit</div>)
 ); // library layout is where the library is actually rendered. Here we just return the right sidebar content where we show the selected todo, which is blank when first viewing a library
 app.post("/library/new", view(CreateLibrary));
 app.get("/login", view(LoginLayout));

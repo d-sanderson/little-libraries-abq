@@ -2,11 +2,10 @@
 /** @jsxFrag  Fragment */
 import { jsx } from "hono/jsx";
 import { Link } from "../../htmljs";
+import { GET_LIBRARIES } from "../queries";
 
 const MainLayout = async (props) => {
-  const { results: libraries } = await props.context.env.DB.prepare(
-    "SELECT * FROM LittleLibraries"
-  ).all();
+  const { results: libraries } = await props.context.env.DB.prepare(GET_LIBRARIES).all();
   const path = new URL(props.context.req.url).pathname;
   return (
     <div>
