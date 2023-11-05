@@ -2,7 +2,9 @@
 /** @jsxFrag  Fragment */
 import { jsx } from "hono/jsx";
 import LibraryDetails from "../components/LibraryDetails";
-// import { TodoListForlibrary, NewTodoForm } from "../routes/todos";
+import Comments from "../components/Comments";
+import { NewComment } from "../components/NewComment";
+import { GET_COMMENTS_AND_USER_EMAIL } from "../queries";
 
 const LibraryLayout = async ({ context, children }) => {
   const { libraryId } = context.req.param();
@@ -12,12 +14,20 @@ const LibraryLayout = async ({ context, children }) => {
     .bind(libraryId)
     .first();
 
+    
+  const { results: comments } = await context.env.DB.prepare(GET_COMMENTS_AND_USER_EMAIL
+  )
+    .bind(libraryId)
+    .all();
+
   return (
     <div>
       <LibraryDetails library={library} />
       <div id="ViewLibraryChildren" class="w-1/2">
         {children}
       </div>
+      <Comments comments={comments} />
+      <NewComment libraryId={libraryId} />
     </div>
   );
 };

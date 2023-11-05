@@ -1,4 +1,4 @@
-import { html } from 'hono/html'
+import { html } from "hono/html";
 
 // Anything you put in the body tag here is never re-loaded, so if you need to add a nav, header or footer with data that may change, you should put this in a sub-layout component e.g. main.js
 const AppLayout = (props) => html`
@@ -28,8 +28,9 @@ const AppLayout = (props) => html`
     </head>
     <body class="pt-16 antialiased">
       ${props.children}
+
     </body>
   </html>
 `;
 
-export default AppLayout
+export default AppLayout;

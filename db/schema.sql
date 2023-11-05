@@ -9,7 +9,8 @@ CREATE TABLE LittleLibraries (
     name TEXT NOT NULL,
     description TEXT,
     latitude REAL NOT NULL,
-    longitude REAL NOT NULL
+    longitude REAL NOT NULL,
+    approved_status INTEGER NOT NULL
 );
 
 -- Create the Users table with an auto-incrementing primary key
@@ -30,10 +31,10 @@ CREATE TABLE LibraryComments (
 );
 
 -- Insert dummy data into the LittleLibraries table
-INSERT INTO LittleLibraries (name, description, latitude, longitude) VALUES
-    ('Library A', 'A small library with a variety of books.', 40.7128, -74.0060),
-    ('Library B', 'Located in a park, specializes in children''s books.', 34.0522, -118.2437),
-    ('Library C', 'Community library with a wide selection of genres.', 51.5074, -0.1278);
+INSERT INTO LittleLibraries (name, description, latitude, longitude, approved_status) VALUES
+    ('Library A', 'A small library with a variety of books.', 40.7128, -74.0060, 0),
+    ('Library B', 'Located in a park, specializes in children''s books.', 34.0522, -118.2437, 0),
+    ('Library C', 'Community library with a wide selection of genres.', 51.5074, -0.1278, 1);
 
 -- Insert dummy data into the Users table with passwords
 INSERT INTO Users (email, password) VALUES
@@ -42,8 +43,8 @@ INSERT INTO Users (email, password) VALUES
     ('user3@example.com', 'password3');
 
 -- Insert dummy data into the LibraryComments table
-INSERT INTO LibraryComments (library_id, user_id, comment_text) VALUES
-    (1, 1, 'I love this library! It has a great selection of books.'),
-    (2, 2, 'I often bring my kids here. They enjoy it a lot.'),
-    (3, 3, 'This library is a fantastic resource for our community.');
+-- INSERT INTO LibraryComments (library_id, user_id, comment_text) VALUES
+--     (1, 1, 'I love this library! It has a great selection of books.'),
+--     (2, 2, 'I often bring my kids here. They enjoy it a lot.'),
+--     (3, 3, 'This library is a fantastic resource for our community.');
 

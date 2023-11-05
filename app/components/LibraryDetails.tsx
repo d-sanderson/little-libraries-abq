@@ -10,6 +10,7 @@ const LibraryDetails = ({ library }) => {
         <p>{library.description}</p>
         <pre>{library.latitude}</pre>
         <pre>{library.longitude}</pre>
+        <pre>{library.approved_status}</pre>
       </div>
     </div>
   )

@@ -19,21 +19,30 @@ const MainLayout = async (props) => {
             >
               Little Libraries Albuquerque
               <span class="flex opacity-90 group-hover:scale-150 group-hover:opacity-100 items-center h-full group-hover:-rotate-6 ease-out duration-500 px-0.5 py-px ml-2 -translate-x-px text-[0.65rem] font-bold leading-none border-[2px] rounded border-black -translate-y-px">
-                DEMO
+                505
               </span>
             </a>
             <nav class="items-center hidden space-x-5 text-sm font-medium lg:flex">
-              <a class="relative transition-colors text-neutral-700 hover:text-black group" href="/">
+              <a
+                class="relative transition-colors text-neutral-700 hover:text-black group"
+                href="/"
+              >
                 <span> view all libraries</span>
                 <span class="absolute bottom-0 w-0 h-0.5 duration-300 ease-out bg-black group-hover:w-full left-1/2 group-hover:left-0 group-hover:-translate-x-0"></span>
               </a>
             </nav>
           </div>
           <div class="relative space-x-1 font-medium leading-10 sm:space-x-2 md:flex-grow-0 md:flex-shrink-0 md:text-right lg:flex-grow-0 lg:flex-shrink-0">
-            <Link to="/login" class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 text-neutral-900 hover:text-neutral-800 hover:bg-neutral-100">
+            <Link
+              to="/login"
+              class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 text-neutral-900 hover:text-neutral-800 hover:bg-neutral-100"
+            >
               Login
             </Link>
-            <Link to="/signup" class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 bg-neutral-900 hover:bg-neutral-800 hover:text-white text-gray-100">
+            <Link
+              to="/signup"
+              class="inline-flex items-center px-3 sm:px-5 text-sm border-0 rounded-md cursor-pointer h-9 focus:outline-none md:mt-0 bg-neutral-900 hover:bg-neutral-800 hover:text-white text-gray-100"
+            >
               Signup
             </Link>
           </div>
@@ -42,9 +51,9 @@ const MainLayout = async (props) => {
 
       <main class="relative flex items-start min-h-screen 2xl:px-0 lg:px-4 px-5 pt-0 pb-0 mx-auto mt-1 max-w-8xl rounded-t-3xl">
         <aside class="fixed block w-56 h-screen max-h-screen pt-20 pb-5 pr-5 overflow-scroll bg-white lg:pt-8 lg:pb-16 z-20 top-[55px]">
-          <h2 class="relative px-2 py-1 mb-2 text-sm font-semibold rounded-md">
+          <a href="/" class="relative px-2 py-1 mb-2 text-sm font-semibold rounded-md">
             Little Libraries
-          </h2>
+          </a>
           <div class="relative grid grid-flow-row text-sm mb-7 auto-rows-max">
             {libraries.map((lib) => (
               <Link
@@ -60,7 +69,7 @@ const MainLayout = async (props) => {
             ))}
             <Link
               class="group flex w-full items-center rounded-md border px-2 py-1.5"
-              to="/admin/"
+              to="/admin"
             >
               Admin
             </Link>
@@ -74,6 +83,12 @@ const MainLayout = async (props) => {
           {props.children}
         </div>
       </main>
+      <footer>
+        <p class="text-center text-gray-500 text-xs">
+          &copy;{new Date().getFullYear()} Lil library corp 💗.
+          All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 };
